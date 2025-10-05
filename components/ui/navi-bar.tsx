@@ -2,6 +2,8 @@
 
 import { Calculator, Home } from "lucide-react";
 import Link from "next/link";
+import ModeToggle from "./theme-toggle";
+import { Button } from "./button";
 
 const Navbar = () => {
   const navLinks = [
@@ -11,7 +13,8 @@ const Navbar = () => {
 
   return (
     <div className="absolute top-0 w-full flex justify-center items-center">
-      <div className=" w-full flex justify-center items-center py-1 text-indigo-800 px-1 text-[20px] gap-8 mb-8 lg:text-lg lg:gap-40 lg:py-4 lg:px-100 md:text-lg md:gap-40 md:py-4 md:px-100">
+      <div className="w-full flex justify-center items-center py-1 text-indigo-800 px-1 text-[20px] gap-8 mb-8 lg:text-lg lg:gap-40 lg:py-4 lg:px-100 md:text-lg md:gap-40 md:py-4 md:px-100">
+      <Button asChild><ModeToggle/></Button>
           {navLinks.map((i,_)=>(
             <div key={i.href}><Link href={i.href}>{i.icon}</Link></div>
           ))}
